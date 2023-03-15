@@ -11,6 +11,7 @@
 
 ## Installation (If you want)
 ### Prerequisite
+- You should follow each other😁. (Most important)
 - Microsoft Edge (browser)
 - [Thonny](https://thonny.org/) - (Python + editor)
 
