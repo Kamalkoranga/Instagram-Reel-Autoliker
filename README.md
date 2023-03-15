@@ -16,6 +16,7 @@
 - Microsoft Edge (browser)
 - Microsoft Edge Driver
 - [Thonny](https://thonny.org/) - (Python + editor)
+- Sufficient Internet Connection 😅
 
 ### Steps
 - ``` pip install selenium ```
