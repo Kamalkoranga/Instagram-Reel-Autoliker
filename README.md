@@ -7,7 +7,7 @@
 
 ## Use Cases
 - It is actually written to impress my crush, so that she thinks our likes matches 😅.
-- By this bot we can focus on our work by not wasting time on instagram liking his/her liked reels.
+- By this bot you can focus on your important work by not wasting time on instagram liking his/her liked reels 😎.
 - Since It is built for my personal case, so I don't think that there is any other use case😁.
 
 ## Installation (If you want)
