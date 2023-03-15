@@ -37,7 +37,7 @@ while True:
     time.sleep(2)
     
     # Searches Your crush
-    crush = driver.find_elements_by_xpath("// div[contains(text(), 'YOUR_CRUSH_NAME')]")
+    crush = driver.find_elements_by_xpath("// div[contains(text(), 'YOUR_CRUSH_INSTAGRAM ID')]") #---------------- Change Here
     
     # if he/she had liked
     if crush :
