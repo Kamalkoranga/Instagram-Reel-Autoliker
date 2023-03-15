@@ -19,6 +19,7 @@
 - ``` pip install selenium ```
 - Open your editor(thonny).
 - Paste the code from [reels_autoliker_bot.py](https://github.com/Kamalkoranga/Instagram-Reel-Autoliker/blob/main/reels_autoliker_bot.py) file to your editor.
+- Change username and password to your's instagram (not your crush) at line 18 and 20.
 - Change the name (at line 40) to your crush's instagram id.
 - Press ``F5``` or run it.
 - Now enjoy :)
