@@ -11,12 +11,13 @@
 
 ## Installation (If you want)
 ### Prerequisite
-- Microsoft Edge
-- [Thonny](https://thonny.org/) - (Pyhton + editor)
+- Microsoft Edge (browser)
+- [Thonny](https://thonny.org/) - (Python + editor)
 
 ### Steps
 - ``` pip install selenium ```
-- Open your editor
-- Paste the code from to your editor.
-- Change the name to your crush's instagram id.
+- Open your editor(thonny).
+- Paste the code from [reels_autoliker_bot.py](https://github.com/Kamalkoranga/Instagram-Reel-Autoliker/blob/main/reels_autoliker_bot.py) file to your editor.
+- Change the name (at line 40) to your crush's instagram id.
+- Press ``F5``` or run it.
 - Now enjoy :)
