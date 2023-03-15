@@ -15,9 +15,9 @@ time.sleep(3)
 
 # Enter username, password and click on login
 username = driver.find_element_by_xpath('''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[1]/div/label/input''')
-username.send_keys("kamalskoranga")
+username.send_keys("YOUR_INSTAGRAM_USERNAME")
 password = driver.find_element_by_xpath('''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[2]/div/label/input''')
-password.send_keys("vvdEvvoe8wzFkWVDcHP5Y")
+password.send_keys("YOUR_INSTAGRAM_PASWWORD")
 password.send_keys(Keys.ENTER)
 time.sleep(3)
 wait = WebDriverWait(driver, 10)
