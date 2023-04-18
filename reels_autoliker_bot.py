@@ -5,20 +5,30 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import configparser
+
+# Load configuration
+config = configparser.ConfigParser()
+config.read('config.ini')
+username = config.get('Instagram', 'username')
+password = config.get('Instagram', 'password')
+crush_id = config.get('Instagram', 'crush_id')
 
 # Microsoft Edge setup
-driver = webdriver.Edge(r'msedgedriver.exe')
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Open Instagram
 driver.get("https://www.instagram.com/")
 time.sleep(3)
 
 # Enter username, password and click on login
-username = driver.find_element_by_xpath('''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[1]/div/label/input''')
-username.send_keys("YOUR_INSTAGRAM_USERNAME") # ------------- Enter your instagram username
-password = driver.find_element_by_xpath('''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[2]/div/label/input''')
-password.send_keys("YOUR_INSTAGRAM_PASWWORD") # -------------- Enter your instagram password
-password.send_keys(Keys.ENTER)
+username_input = driver.find_element(By.XPATH, '''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[1]/div/label/input''')
+username_input.send_keys(username) # ------------- Enter your instagram username
+password_input = driver.find_element(By.XPATH, '''/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[2]/div/label/input''')
+password_input.send_keys(password) # -------------- Enter your instagram password
+password_input.send_keys(Keys.ENTER)
 time.sleep(3)
 wait = WebDriverWait(driver, 10)
 
@@ -37,11 +47,15 @@ while True:
     time.sleep(2)
     
     # Searches Your crush
-    crush = driver.find_elements_by_xpath("// div[contains(text(), 'YOUR_CRUSH_INSTAGRAM ID')]") #---------------- Change Here
+    # crush = driver.find_element(By.XPATH, f"// div[contains(text(), {crush_id})]") #---------------- Change Here
+    crush_liked = False
+    for element in driver.find_elements(By.XPATH, f"//*[contains(text(), '{crush_id}')]"):
+        crush_liked = True
+        break
     
     # if he/she had liked
-    if crush :
-        print("She liked this reel...")
+    if crush_liked :
+        print(f"{crush_id} liked this reel...")
         time.sleep(2)
         
         # Closes the likes section
@@ -54,7 +68,7 @@ while True:
         is_liked = 'glyphsSpriteHeart__outline__24__grey_9' in like_button.get_attribute('class')
 
         if is_liked:
-            print('The reel is liked by me.')
+            print('The reel is liked by me also.')
         else:
             
             # If you not than it will like that reel
@@ -63,7 +77,7 @@ while True:
         
     # If he/she had not liked then it will skip that reel
     else:
-        print("Not")
+        print(f"{crush_id} didn't like this reel....")
         time.sleep(2)
         cross = wait.until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[2]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[2]/div")))
         driver.execute_script("arguments[0].click();", cross)

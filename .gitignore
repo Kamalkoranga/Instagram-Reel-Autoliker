@@ -1,0 +1,4 @@
+env/
+config.ini
+reels_autoliker_bot.py
+__pycache__/
