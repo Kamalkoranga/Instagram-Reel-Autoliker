@@ -98,7 +98,3 @@ def bot():
         i += 2
     driver.quit()
     return 'liked'
-
-
-# if __name__ == '__main__':
-#     app.run()
